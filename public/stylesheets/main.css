@@ -1,0 +1,22 @@
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+p{
+    font-weight: 800;
+}
+.thumbnail img{
+    width: 100%;
+}
+.thumbnail{
+    padding: 0;
+}
+.thumbnail .caption-full{
+    padding: 9px;
+}
+.edit{
+    float: left;
+    margin-right: 10px;
+}
+#form-delete{
+    display: inline;
+}
