@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <head>
-    <title>YelpCamp</title>
+    <title>Pixel</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.8/typicons.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,400,400i,700,700i" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/icon.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/button.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' id='roboto-css'  href='//fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic' type='text/css' media='all' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse bg-primary navbar-static-top" style="background-color:#222; border:0;">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -21,16 +28,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand">YelpCamp</a>
+                <a href="/" class="navbar-brand" style="padding-left:40px;"><i class="cube icon" style="font-size:30px; color:white;"></i><span style="color: white; font-size: x-large; font-weight: 500;">PIXEL</span></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-demo">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" style="font-size:20px; padding-right:40px;">
+                    <li style="color:lightgoldenrodyellow; font-weight:400;"><a href="/team">Developers</a></li>
                     <% if(!currentUser){ %>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Sign Up</a></li>
+                        <li style="color:lightgoldenrodyellow; font-weight:400;"><a href="/login">Login</a></li>
+                        <li style="color:lightgoldenrodyellow; font-weight:400;"><a href="/register">Sign Up</a></li>
                     <% } else { %>
-                        <li><a href="#">Signed in as <%= currentUser.username %></a></li>
-                        <li><a href="/logout">Logout</a></li>
+                        <li style="color:lightgoldenrodyellow; font-weight:400;"><a href="#">Signed in as <%= currentUser.username %></a></li>
+                        <li style="color:lightgoldenrodyellow; font-weight:400;"><a href="/logout">Logout</a></li>
                     <% } %>                        
                 </ul>
             </div>

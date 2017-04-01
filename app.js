@@ -11,9 +11,9 @@ var express        = require("express"),
     User           = require("./models/user"),
     seedDB         = require("./seeds");
 
-seedDB();
-
-mongoose.connect(process.env.DATABASEURL);
+seedDB(); 
+// mongodb://localhost/yelp_camp
+mongoose.connect("mongodb://localhost/yelp_camp");
 
 app.use(flash());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -40,7 +40,7 @@ app.use(function(req, res, next){
 app.use(methodOverride("_method"));
 
 app.get("/", function (req, res) {
-    res.redirect("/campgrounds");
+    res.render("landing");
 });
 
 app.get("/campgrounds", function (req, res) {
@@ -90,7 +90,7 @@ app.get("/campgrounds/:id/edit", checkCampgroundOwnership, function(req, res){
     Campground.findById(req.params.id, function(err, foundCampground){
         if(err){
             req.flash("error", "Something went wrong");
-            console.log(err)
+            console.log(err);
         }
         else{
             req.flash("success", "Successfully edited campground");
@@ -102,7 +102,7 @@ app.get("/campgrounds/:id/edit", checkCampgroundOwnership, function(req, res){
 app.put("/campgrounds/:id", checkCampgroundOwnership, function(req, res){
     Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, foundCampground){
         if(err){
-            console.log(err)
+            console.log(err);
         }
         else{
             res.redirect("/campgrounds/"+req.params.id);
@@ -121,8 +121,8 @@ app.delete("/campgrounds/:id", checkCampgroundOwnership, function(req, res){
             req.flash("success", "Sucessfully deleted campground");
             res.redirect("/campgrounds");
         }
-    })
-})
+    });
+});
 
 app.get("/campgrounds/:id/comments/new", isLoggedIn, function (req, res){
     Campground.findById(req.params.id, function(err, campground){
@@ -236,11 +236,15 @@ app.get("/logout", function(req, res){
     res.redirect("/campgrounds");
 });
 
+app.get("/team", function(req, res) {
+    res.render("team");
+});
+
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
-    req.flash("error", "You need to be logged in to that");;
+    req.flash("error", "You need to be logged in to that");
     res.redirect("/login");
 }
 

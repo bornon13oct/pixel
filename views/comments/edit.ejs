@@ -1,15 +1,24 @@
 <% include ../partials/header %>
 
-<h1 style="text-align:center;">Edit Comment</h1>
-    <div style="width:30%; margin:10px auto;">
-        <form action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT" method="post">
-            <div class="form-group">
-                <input class="form-control" type="text" name="comment[text]" value="<%= comment.text %>">
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary btn-large btn-block">Submit</button>
-            </div>
-        </form>
-    </div>
+<div style="width:100%;">
+<div class="form-box wow fadeInUp" style="width: 40%; margin: 70px auto; box-shadow: 0 0 20px rgba(0,0,0,.3)">
+                        	<div class="form-top"style="background: #111;
+    border-bottom: 1px solid rgba(169,169,169,0.7);">
+                        		<div class="form-top-left">
+                        			<h1>Edit Comment</h1>
+                            		<p style="font-weight:100;">Fill in the form below to edit comment:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<span aria-hidden="true" class="typcn typcn-edit"></span>
+                        		</div>
+                            </div>
+                            <div class="form-bottom" style="background:#333;">
+			                    <form role="form" action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT" method="post" class="registration-form">
+			                        <textarea class="form-group" style="border-radius:0px;" name="comment[text]" ><%= comment.text %></textarea>
+			                        <button type="submit" class="btn" style="border-radius:0px;">Add!</button>
+			                    </form>
+		                    </div>
+                        </div>
+</div>
 
 <% include ../partials/footer %> 

@@ -1,10 +1,10 @@
 <% include ../partials/header %>
 
-<div class="jumbotron">
-    <h1>This is landing page</h1>
-    <p>An awesome collection of campgrounds</p>
+<div class="jumbotron" style="/* border: 1px solid gray; */border-radius:0px;text-align: center;box-shadow: 0 0 20px rgba(0,0,0,.3);background-color: rgba(0,0,0,0.02);">
+    <h1><i class="block layout icon"></i>Welcome to Pixel</h1>
+    <p>Tell your story through pictures</p>
     <p>
-        <a href="/campgrounds/new" class="btn btn-primary btn-large">Add campground</a>
+        <a href="/campgrounds/new" class="butt" style="font-size: 15px; border-radius: 0px;">Add story</a>
     </p>
 </div>
 <div class="row text-center" style="display:flex; flex-wrap:wrap;">
@@ -15,7 +15,18 @@
             <div class="caption">
                 <h4><%= campground.name %></h4>
             </div>
-            <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More info</a>
+            <a href="/campgrounds/<%= campground._id %>" class="butt" style="    border-radius: 0px;
+    border-radius: 0px;
+    margin-top: 0px;
+    /* padding-top: 7px; */
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 1px solid #333;
+    font-size: 10px;
+    font-weight: 400;">More info</a>
         </div>
     </div>
 <% }); %>
