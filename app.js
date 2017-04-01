@@ -13,7 +13,7 @@ var express        = require("express"),
 
 seedDB(); 
 // mongodb://localhost/yelp_camp
-mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://skay13oct:skay13oct@ds135689.mlab.com:35689/yelpcamp");
 
 app.use(flash());
 app.use(bodyParser.urlencoded({extended: true}));
