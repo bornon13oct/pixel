@@ -14,7 +14,7 @@ var express        = require("express"),
 seedDB(); 
 // mongodb://localhost/yelp_camp
 
-mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect(process.env.DATABASEURL);
 
 // process.env.DATABASEURL
 app.use(flash());
